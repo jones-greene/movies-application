@@ -12,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'main.js'
   },
-
+  
   // babel config
   module: {
     rules: [
@@ -31,10 +31,10 @@ module.exports = {
       }
     ]
   },
-
+  
   // allows us to see how the transpiled js relates to the untranspiled js
   devtool: 'source-map',
-
+  
   devServer: {
     contentBase: path.join(__dirname, 'public'),
     port: 1313,
