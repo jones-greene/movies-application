@@ -43,6 +43,13 @@ export const updateMovie = (obj) => {
   
   
   
-  
+export const deleteMovie = (id) => {
+  return fetch(`api/movies/${id}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+};
 
 

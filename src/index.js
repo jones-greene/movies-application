@@ -1,7 +1,7 @@
 import $ from "jquery"
 import sayHello from './hello';
 sayHello('World');
-import {getMovies, postMovie, updateMovie} from './api.js';
+import {getMovies, postMovie, updateMovie, deleteMovie} from './api.js';
 // END OF IMPORTS
 
 
@@ -34,12 +34,14 @@ const showMovies = () => {
             <div class="card-text">Rating: ${rating}</div>
             <button class="btn btn-primary" id="${id}"
             data-toggle="modal" data-target="#myModal">Edit</button>
+            <button class="btn btn-danger" id="delete-${id}">Delete</button>
             </div>`
       
       cardContainer.append(html)
     });
     //! create click handler
     createEditHandler(movies)
+    createDeleteHandler(movies)
   }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.')
     console.log(error);
@@ -92,7 +94,23 @@ const showMovies = () => {
         .catch(()=> console.log(`EDIT ERROR`))
     
   })
-  
+
+  const createDeleteHandler = (arr) => {
+    editBucket.forEach(id =>{
+      $(`#delete-${id}`).click(function (e) {
+        deleteMovie(id)
+            .then(()=> showMovies())
+            .catch(() => console.log("Delete Error"))
+      })
+    })
+
+
+
+  }
+
+
+
+
 // "#" + button
 //   `#${button}`
   //! INITIAL DISPLAY OF MOVIES
