@@ -1,7 +1,7 @@
 import $ from "jquery"
 import sayHello from './hello';
 sayHello('World');
-import {getMovies, postMovie} from './api.js';
+import {getMovies, postMovie, updateMovie} from './api.js';
 // END OF IMPORTS
 
 
@@ -12,10 +12,13 @@ import {getMovies, postMovie} from './api.js';
 
 $(document).ready(function () {
 // FOR SELECT FORM
+  let length
+  let editBucket = []
   //!GET
 
 const showMovies = () => {
   getMovies().then((movies) => {
+    length = movies.length+1
     $("#before-loading").css('display', 'none');
     $("#after-loading").css('display', 'inline');
     let cardContainer = $('#card-container')
@@ -24,40 +27,75 @@ const showMovies = () => {
     console.log('Here are all the movies:');
     
     movies.forEach(({title, rating, id}) => {
-
+      editBucket.push(id)
       let html =
           `<div class="card bg-warning">
             <div class="card-title">${title}</div>
             <div class="card-text">Rating: ${rating}</div>
-</div>`
+            <button class="btn btn-primary" id="${id}"
+            data-toggle="modal" data-target="#myModal">Edit</button>
+            </div>`
+      
       cardContainer.append(html)
     });
+    //! create click handler
+    createEditHandler(movies)
   }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.')
     console.log(error);
   });
 }
   
-  //!POST
+
+//! POST MOVIE
+
+  
   let submitButton = $('#submit')
-  const addMovie = () => {
-    let id = 2
-    let selectValue = $('#select').val()
-    let inputValue = $('#input').val()
-    postMovie({
-      "id": id++,
-      "title": inputValue,
-      "rating": selectValue,
-    })
-        .then(showMovies)
-        .catch(e => console.log(`Post Error`))
-  }
-
-
   submitButton.click(function (e) {
     e.preventDefault()
     addMovie()
   })
+  const addMovie = () => {
+    let selectValue = $('#select').val()
+    let inputValue = $('#input').val()
+    postMovie({
+      "title": inputValue,
+      "rating": selectValue,
+    }, length)
+        .then(()=> showMovies())
+        .catch(e => console.log(`Post Error`))
+  }
+  
+  //! EDIT MOVIE
+  const createEditHandler = (arr) => {
+    editBucket.forEach(button => {
+      $(`#${button}`).click(function (e) {
+        arr.forEach(movie => {
+          if(movie.id === button){
+            $('#editTitle').val(movie.title)
+            $('#editSubmit').data('value', movie.id)
+          }
+        })
+      })
+    })
+  }
+  
+  $('#editSubmit').click(function (e) {
+    e.preventDefault()
+    let updatedMovie = {
+      id: $('#editSubmit').data('value'),
+      title: $('#editTitle').val(),
+      rating: $('#editSelect').val()
+    }
+    updateMovie(updatedMovie)
+        .then(()=> showMovies())
+        .catch(()=> console.log(`EDIT ERROR`))
+    
+  })
+  
+// "#" + button
+//   `#${button}`
+  //! INITIAL DISPLAY OF MOVIES
   showMovies()
 });
 
