@@ -1,11 +1,6 @@
 {
   "movies": [
     {
-      "id": 1,
-      "title": "Casablanca",
-      "rating": "5"
-    },
-    {
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
@@ -21,9 +16,9 @@
       "id": 4
     },
     {
+      "id": 5,
       "title": "Halloween Town",
-      "rating": "5",
-      "id": 5
+      "rating": "3"
     }
   ]
 }
