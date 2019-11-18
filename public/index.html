@@ -19,33 +19,56 @@
 
 
 <!--FORM FOR INPUT MOVIES-->
-<div id="after-loading">
-    <div class="container">
-    </div>
+<div id="after-loading" class="no-show">
+    <div id="card-container"></div>
 <div id="form-container">
-
-
-
-<!--END OF INPUT MOVIES  -->
-<!--SELECET FORM-->
-
-
-
-
-        <!--END OF SELECT FORM        -->
-<!--BUTTON        -->
-
-<!--        <button class="waves-effect waves-light btn">button</button>-->
-
-<!--END OF BUTTON-->
-
-
+    <form action="#">
+        <div class="form-group">
+            <input type="text" class="form-control"
+            placeholder="e.g Monster's Inc."
+                   id="input" required>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="select" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" id="submit">Add Movie</button>
+    </form>
 
     </div>
 </div>
 
-<!-- END OF FORM MOVIES   -->
+<!-- END OF AFTER LOADING   -->
 
+<!--MODAL-->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#" id="editForm">
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           placeholder="e.g Monster's Inc."
+                           id="editTitle" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" id="editSelect" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="editSubmit" data-value="" data-dismiss="modal">Update!</button>
+            </form>        </div>
+    </div>
+</div>
 
 
 
