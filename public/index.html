@@ -68,7 +68,9 @@
             </div>
         </div>
     </div>
-</div>
+
+    
+<!--</div> end of after loading-->
 
 <hr>
 
@@ -88,12 +90,23 @@
         </div>
    </div>
 </div>
-
-
-
-
-
-<!-- END OF AFTER LOADING   -->
+    
+    <!--    db-->
+    <h1>Search your favorite actor</h1>
+    <form action="#" onsubmit="(e)=> e.preventDefault()">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="dbInput">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="dbSubmit">Submit</button>
+            </div>
+        </div>
+    </form>
+    
+<!--    db cards-->
+    <div id="db-card-wrapper"></div>
+    
+    
+    <!-- END OF AFTER LOADING   -->
 
 <!--MODAL-->
 <!-- Modal -->
@@ -122,13 +135,34 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
+<!--MODAL TOW -->
+    <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form action="#" id="editForm">
+                    <div class="form-group">
+                        <h3 id="editmovie">Movie Title:</h3>
+                        <input type="text" class="form-control"
+                               placeholder="e.g Monster's Inc."
+                               id="db-input" required>
+                    </div>
+                    <div class="form-group" id="modal">
+                        <h3 id="editrating">Rate Your Movie:</h3>
+                        <select class="form-control" id="db-select" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="db-add" data-value="" data-dismiss="modal">Add!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
 
     <script src="./main.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

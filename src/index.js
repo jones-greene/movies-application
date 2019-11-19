@@ -2,6 +2,8 @@ import $ from "jquery"
 import sayHello from './hello';
 sayHello('World');
 import {getMovies, postMovie, updateMovie, deleteMovie} from './api.js';
+import {getSearch} from "./db"
+
 // END OF IMPORTS
 
 
@@ -11,9 +13,13 @@ import {getMovies, postMovie, updateMovie, deleteMovie} from './api.js';
 
 
 $(document).ready(function () {
+//   $('#modal2').on('shown.bs.modal', function () {
+//     $('#modal2').trigger('focus')
+//   })
 // FOR SELECT FORM
   let length
   let editBucket = []
+  let searchList = []
   //!GET
 
 const showMovies = () => {
@@ -110,14 +116,66 @@ const showMovies = () => {
 
 
   }
-
-
-
-
-// "#" + button
-//   `#${button}`
   //! INITIAL DISPLAY OF MOVIES
   showMovies()
+  
+  //! DATA BASE STUFF
+   let dbButton = $('#dbSubmit')
+  dbButton.click(function () {
+    let term = $('#dbInput').val()
+    getSearch(term)
+        .then((movies)=> {
+          let idBucket = []
+          movies[0].known_for.forEach((m,i)=> {
+            idBucket.push(m.id)
+            searchList.push(m)
+            let wrapper = $('#db-card-wrapper')
+            let html =
+                `<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">${m.title}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${m.release_date}</h6>
+    <p class="card-text">${m.overview}</p>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2" id="db-${m.id}">
+  Add To Favorites
+</button>
+  </div>
+</div>`
+            wrapper.append(html)
+          })
+          addAddEvent(idBucket)
+        })
+        .catch(()=> console.log(`DB GET ERROR`))
+  })
+
+
+  const addAddEvent = arr => {
+    arr.forEach((a,i)=> {
+      $(`#db-${a}`).click(function () {
+        searchList.forEach((s,i)=> {
+          if(Number(s.id) === Number(a)){
+            $('#db-input').val(s.title)
+          }
+        })
+      })
+    })
+  }
+  
+  $('#db-add').click(function () {
+    console.log("title: ", $('#db-input').val())
+    console.log("rating: ", $('#db-select').val())
+    console.log("length", length)
+    let movie = {
+      title: $('#db-input').val(),
+      rating: $('#db-select').val()
+    }
+    postMovie(movie, length)
+        .then(()=> showMovies())
+        .catch(()=> console.log(`DB POST ERROR`))
+  })
+  
+  
 });
 
 
