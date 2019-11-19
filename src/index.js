@@ -125,22 +125,28 @@ const showMovies = () => {
     let term = $('#dbInput').val()
     getSearch(term)
         .then((movies)=> {
+          let wrapper = $('#db-card-wrapper')
+          wrapper.html('')
           let idBucket = []
           movies[0].known_for.forEach((m,i)=> {
             idBucket.push(m.id)
             searchList.push(m)
-            let wrapper = $('#db-card-wrapper')
             let html =
-                `<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">${m.title}</h5>
+                `
+<div class="d-inline-flex p-2">
+<div class="overflow-auto">
+<div class="card" style="width: 18rem;" id="cardActors">
+  <div class="card-body" id="cardActorsBody">
+    <h5 class="card-title" id="cardActorTitle">${m.title}</h5>
     <h6 class="card-subtitle mb-2 text-muted">${m.release_date}</h6>
-    <p class="card-text">${m.overview}</p>
+    <p class="overview">${m.overview}</p>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2" id="db-${m.id}">
+<button type="button" class="btn  favorites" data-toggle="modal" data-target="#modal2" id="db-${m.id}">
   Add To Favorites
 </button>
   </div>
+</div>
+</div>
 </div>`
             wrapper.append(html)
           })
