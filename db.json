@@ -1,28 +1,23 @@
 {
   "movies": [
     {
-      "id": 2,
+      "id": 1,
       "title": "Star Wars: A New Hope",
       "rating": "1"
     },
     {
       "title": "Charlie Brown",
       "rating": "5",
-      "id": 3
+      "id": 2
     },
     {
       "title": "The Art of Human Nature",
       "rating": "5",
-      "id": 4
+      "id": 3
     },
     {
       "id": 5,
-      "title": "Halloween Town",
-      "rating": "3"
-    },
-    {
-      "id": 6,
-      "title": "Friday",
+      "title": "The Matrix",
       "rating": "1"
     }
   ]
