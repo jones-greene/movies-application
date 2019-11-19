@@ -5,11 +5,18 @@
     <title>My Application</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Alatsi|Kanit|Rajdhani&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f50fcf1d06.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
+<h1 id="header"> My Movie List</h1>
+
+
+
+
 <div id="before-loading">
 
 
@@ -18,17 +25,32 @@
     </div>
 
 
-<!--FORM FOR INPUT MOVIES-->
+
+
+
+
+
+
+<!--CARD FOR MOVIE CONTAINER -->
 <div id="after-loading" class="no-show">
-    <div id="card-container"></div>
+
+    <div class="row">
+<!--CARD FOR INPUT FORM-->
+        <div class="col-sm-6">
+            <div class="card" id="inputbody">
+                <div class="card-body" id="inputcard" >
+<!-- END OF CARD FOR INPUT FORM-->
+                    <!--FORM FOR INPUT MOVIES-->
 <div id="form-container">
     <form action="#">
         <div class="form-group">
+            <label for="input" id="forenter">Enter Movie Title:</label>
             <input type="text" class="form-control"
             placeholder="e.g Monster's Inc."
                    id="input" required>
-        </div>
-        <div class="form-group">
+                </div>
+        <div class="form-group" >
+            <label for="select" id="forselect"> Rating: </label>
             <select class="form-control" id="select" required>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -37,11 +59,39 @@
                 <option value="5">5</option>
             </select>
         </div>
-        <button class="btn btn-primary" id="submit">Add Movie</button>
+        <button class="btn btn-primary" id="submit">Add Movie<i class="fas fa-film fa-1x"></i></button>
     </form>
 
+
+</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<hr>
+
+
+<!--    CARD CONTAINER FOR MOVIES -->
+<div class="row">
+        <div class="col-sm-6">
+
+            <div class="card" id="moviecard">
+                <div class="d-flex flex-row">
+                <div class="card-body" >
+                    <!--END OF CARD FOR MOVIE CONTAINER-->
+
+                    <div id="card-container"></div>
+                </div>
+            </div>
+        </div>
+   </div>
+</div>
+
+
+
+
 
 <!-- END OF AFTER LOADING   -->
 
@@ -52,11 +102,13 @@
         <div class="modal-content">
             <form action="#" id="editForm">
                 <div class="form-group">
+                    <h3 id="editmovie">Edit Movie Title:</h3>
                     <input type="text" class="form-control"
                            placeholder="e.g Monster's Inc."
                            id="editTitle" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="modal">
+                    <h3 id="editrating">Edit Movie Rating:</h3>
                     <select class="form-control" id="editSelect" required>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -66,7 +118,8 @@
                     </select>
                 </div>
                 <button class="btn btn-primary" id="editSubmit" data-value="" data-dismiss="modal">Update!</button>
-            </form>        </div>
+            </form>
+        </div>
     </div>
 </div>
 

@@ -1,0 +1,267 @@
+body{
+ background-color: #DAE4B9;
+}
+
+
+.card{
+    width:400px
+}
+
+.card-body{
+
+}
+
+.card-text{
+    font-family: 'Alatsi';
+    text-align: center;
+    font-size: 20px;
+}
+
+
+#cardtitlejs{
+    font-family: 'Rajdhani', bold, monospace ;
+    font-size: 25px;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    width:300px;
+
+}
+
+
+
+#card-container{
+    width:1520px;
+    background-color:#98BAA0 ;
+    margin-left: 30px;
+    padding-left: 50px;
+}
+
+
+.delete{
+
+    outline: none;
+    border:none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: #C32742;
+    font-size: 16px;
+    /*font-weight: 300px;*/
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 65px;
+    /*margin: 0 auto;*/
+    margin-top: 30px;
+    margin-left: 90px;
+    margin-bottom: 30px;
+    width: 230px;
+    height: 60px;
+    border-radius: 20px;
+    box-shadow: 0 6px #D85B43;
+
+}
+
+.delete:hover {
+    box-shadow: 0 4px #af3212;
+    top: 2px;
+}
+
+/*.edit{*/
+/*    margin-top: 15px;*/
+/*    margin-left: 130px;*/
+/*    background-color: #D85B43;*/
+/*    padding-bottom: 30px;*/
+/*    color:white;*/
+/*    border: 2px white solid;*/
+/*    width: 150px;*/
+/*    height: 30px;*/
+
+/*}*/
+
+
+.edit{
+    outline: none;
+    border:none;
+    cursor: pointer;
+    display: block;
+    position: relative;
+    background-color: #D85B43;
+    font-size: 16px;
+    /*font-weight: 300px;*/
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 30px;
+    /*margin: 0 auto;*/
+    margin-top: 18px;
+    margin-left: 90px;
+    width: 230px;
+    height: 60px;
+    border-radius: 20px;
+    box-shadow: 0 6px #C32742;
+    transition: .5s;
+}
+
+.edit:hover {
+    box-shadow: 0 4px #af3212;
+    top: 2px;
+}
+
+
+#editForm{
+    margin-left: 50px;
+    margin-top: 70px;
+    margin-right: 80px;
+    margin-bottom: 50px;
+
+
+}
+
+.fas{
+    width: 20px;
+    padding-top: 10px;
+    color: white;
+    margin-left: 20px;
+}
+
+#editTitle{
+    font-family: 'Rajdhani', bold, monospace
+}
+
+#forenter{
+    color:white;
+    font-family: 'Alatsi', serif;
+
+}
+
+#forselect{
+    color:white;
+    font-family: 'Alatsi';
+    font-size: 30px;
+    margin-left:100px;
+}
+
+
+#editmovie{
+    font-family: 'Alatsi', serif;
+}
+
+#editrating{
+    font-family: 'Alatsi', serif;
+}
+
+#editSubmit{
+    display:flex;
+    background-color: #D2844A;
+    border: white 1px solid;
+}
+
+
+#forenter{
+    margin-left: 100px;
+    font-size: 30px;
+}
+
+/*.form-group{*/
+/*    margin-top: 50px;*/
+/*}*/
+
+
+#header{
+    color:#C32742;
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 70px;
+    font-family: 'Kanit';
+    margin-top: 20px;
+}
+
+hr{
+    width: 1500px;
+    margin-bottom: -40px;
+    color: white;
+}
+
+#input{
+    text-align: center;
+    margin-left: 100px;
+}
+
+/*#formcard {*/
+/*    width: 200px;*/
+/*    height: 300px;*/
+/*}*/
+
+#inputbody{
+    margin-top: -50px;
+    background-color: #D2844A;
+    padding-bottom: 35px;
+}
+
+.form-group {
+    width: 400px;
+
+}
+
+
+#input{
+    font-family: 'Rajdhani', bold, monospace
+}
+
+
+
+#inputbody{
+    margin-left: 500px;
+    width: 700px;
+    padding-right: 90px;
+    padding-left: 30px;
+    padding-top: 30px;
+
+}
+#inputcard{
+
+    height: 300px;
+}
+
+
+
+#moviecard{
+    margin-left: 20px;
+    margin-top: 65px;
+    margin-bottom: 40px;
+    width:1630px;
+    background-color:#98BAA0 ;
+
+}
+
+
+#listmovie{
+    display: inline-flex;
+    width: 450px;
+    height: 270px;
+    margin-left: 10%;
+    background-color: #DAE4B9;
+    border: 1px white solid;
+}
+
+#select{
+    margin-left: 100px;
+    width: 400px;
+    font-family: 'Rajdhani', bold, monospace
+}
+
+#submit{
+    margin-left: 100px;
+    margin-bottom: 30px;
+    width: 400px;
+    height:60px;
+    background-color: #D85B43;
+    border: 1px solid white;
+    font-family: 'Rajdhani', bold, monospace;
+    font-size: 30px;
+
+}
+
+

@@ -29,12 +29,15 @@ const showMovies = () => {
     movies.forEach(({title, rating, id}) => {
       editBucket.push(id)
       let html =
-          `<div class="card bg-warning">
-            <div class="card-title">${title}</div>
+
+          `<div class="d-inline-flex p-2">
+            <div class="card " id="listmovie">
+            <div class="card-title" id="cardtitlejs"><strong>${title}</strong></div>
             <div class="card-text">Rating: ${rating}</div>
-            <button class="btn btn-primary" id="${id}"
+            <button class="btn edit" id="${id}"
             data-toggle="modal" data-target="#myModal">Edit</button>
-            <button class="btn btn-danger" id="delete-${id}">Delete</button>
+            <button class="btn delete" id="delete-${id}">Delete</button>
+            </div>
             </div>`
       
       cardContainer.append(html)

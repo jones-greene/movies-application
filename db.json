@@ -1,9 +1,9 @@
 {
   "movies": [
     {
+      "id": 2,
       "title": "Star Wars: A New Hope",
-      "rating": "5",
-      "id": 2
+      "rating": "1"
     },
     {
       "title": "Charlie Brown",
@@ -19,6 +19,16 @@
       "id": 5,
       "title": "Halloween Town",
       "rating": "3"
+    },
+    {
+      "id": 6,
+      "title": "Friday",
+      "rating": "1"
+    },
+    {
+      "title": "Rush Hour",
+      "rating": "4",
+      "id": 7
     }
   ]
 }
