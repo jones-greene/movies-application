@@ -11,6 +11,7 @@ import $ from 'jquery'
   //!POST
     export const postMovie = (movieObj, num) => {
   const {title , rating} = movieObj
+    if(!title || !rating) return alert('Title and Rating are required!')
       let newMovie = {
         id: ++num,
         title,
@@ -22,7 +23,7 @@ import $ from 'jquery'
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(movieObj)
+      body: JSON.stringify(newMovie)
     })
   }
   
